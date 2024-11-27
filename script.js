@@ -12,4 +12,4 @@ preloaderTl.to(counter, {
   onUpdate: updateLoaderText,
   value: 100,
   duration: 5,
-});
+})
