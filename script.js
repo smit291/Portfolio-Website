@@ -1,4 +1,5 @@
-	gsap.registerPlugin(ScrollSmoother) 
+console.log("JavaScript file is loaded successfully!");
+gsap.registerPlugin(ScrollSmoother) 
   ScrollSmoother.create({
   smooth: 1,
   effects: true,
