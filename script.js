@@ -1,5 +1,5 @@
-const cors = require('cors');
-app.use(cors());
+const corb = require('corb');
+app.use(corb());
 
 console.log("JavaScript file is loaded successfully!");
 gsap.registerPlugin(ScrollSmoother) 
