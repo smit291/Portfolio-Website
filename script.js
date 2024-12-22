@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 
-  const API_ENDPOINT = "https://icanhazdadjoke.com/";
+  const API_ENDPOINT = "https://smit-ux.webflow.io/";
   
   const headers = {
     "Access-Control-Allow-Origin": "*",
