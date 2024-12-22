@@ -1,3 +1,31 @@
+const fetch = require("node-fetch");
+
+  const API_ENDPOINT = "https://icanhazdadjoke.com/";
+  
+  const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, OPTION",
+    "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, X-Requested-With"
+  };
+
+  exports.handler = async (event, context) => {
+    return fetch(API_ENDPOINT, { headers: { Accept: "application/json" } })
+      .then((response) => response.json())
+      .then((data) => ({
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, OPTION",
+            "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, X-Requested-With"
+         },
+        statusCode: 200,
+        body: JSON.stringify({
+            "test": "test"
+          })
+        //body: data.joke,
+      }))
+      .catch((error) => ({ statusCode: 422, body: String(error) }));
+  };
+
 console.log("JavaScript file is loaded successfully!");
 gsap.registerPlugin(ScrollSmoother) 
   ScrollSmoother.create({
