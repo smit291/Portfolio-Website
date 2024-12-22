@@ -1,4 +1,4 @@
-const targetUrl = 'http://example.com/data';
+const targetUrl = 'https://smit-ux.webflow.io/';
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
 fetch(proxyUrl + targetUrl)
