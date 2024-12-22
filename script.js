@@ -1,5 +1,3 @@
-const fetch = require("node-fetch");
-
   const API_ENDPOINT = "https://smit-ux.webflow.io/";
   
   const headers = {
