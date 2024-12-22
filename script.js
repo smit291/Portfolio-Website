@@ -1,5 +1,10 @@
-const corb = require('corb');
-app.use(corb());
+const targetUrl = 'http://example.com/data';
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+fetch(proxyUrl + targetUrl)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
 
 console.log("JavaScript file is loaded successfully!");
 gsap.registerPlugin(ScrollSmoother) 
