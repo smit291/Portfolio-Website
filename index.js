@@ -27,7 +27,7 @@ const API_ENDPOINT = "https://smit-ux.webflow.io/";
   };
 
 console.log("JavaScript file is loaded successfully!");
-gsap.registerPlugin(ScrollSmoother);
+gsap.registerPlugin(ScrollSmoother) 
   ScrollSmoother.create({
   smooth: 1,
   effects: true,
@@ -95,6 +95,48 @@ $("[data-lenis-toggle]").on("click", function () {
     lenis.start();
   }
 });
+
+  let typeSplit;
+  // Split the text up
+  function runSplit() {
+    typeSplit = new SplitType(
+      ".split-lines",
+      {
+        types: "lines, words",
+      }
+    );
+    createAnimation();
+  }
+  runSplit();
+  // Update on window resize
+  let windowWidth = $(window).innerWidth();
+  window.addEventListener("resize", function () {
+    if (windowWidth !== $(window).innerWidth()) {
+      windowWidth = $(window).innerWidth();
+      typeSplit.revert();
+      runSplit();
+    }
+  });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function createAnimation() {
+    $(".line").each(function (index) {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: $(this),
+          start: "top center",
+          end: "bottom center",
+          scrub: 1,
+        },
+      });
+      tl.from($(this), {
+        "--line-width": "0%",
+        duration: 1.5,
+        ease: "power4.out",
+      });
+    });
+  }
 
 window.addEventListener("DOMContentLoaded", (event) => {
   // Split text into spans
