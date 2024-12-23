@@ -1,4 +1,10 @@
-  const API_ENDPOINT = "https://smit-ux.webflow.io/";
+(function() {
+function printHelloWorld()
+{
+    console.log("Hello world from script hosted on github repo and deliverd through jsDelivr");
+}
+})();
+const API_ENDPOINT = "https://smit-ux.webflow.io/";
   
   const headers = {
     "Access-Control-Allow-Origin": "*",
