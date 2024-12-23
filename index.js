@@ -27,7 +27,7 @@ const API_ENDPOINT = "https://smit-ux.webflow.io/";
   };
 
 console.log("JavaScript file is loaded successfully!");
-gsap.registerPlugin(ScrollSmoother) 
+gsap.registerPlugin(ScrollSmoother);
   ScrollSmoother.create({
   smooth: 1,
   effects: true,
